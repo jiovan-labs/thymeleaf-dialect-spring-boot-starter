@@ -1,3 +1,5 @@
+[English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md)
+
 # Thymeleaf Dialect Spring Boot Starter
 
 Spring Boot application integrates `thymeleaf` dialects quickly, to boost your template development.
