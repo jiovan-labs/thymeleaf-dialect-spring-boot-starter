@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2022 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,33 +14,33 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.thymeleafdialect.factory;
+package com.jiovan.spring.starter.thymeleafdialect.factory;
 
 
 import java.util.Set;
 import jakarta.annotation.Nullable;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.rng.simple.RandomSource;
 import org.thymeleaf.context.IExpressionContext;
 import org.thymeleaf.expression.IExpressionObjectFactory;
-import cn.unikue.commonplexus.javaseutil.util.CollectionPlainWraps;
+import com.jiovan.plexus.common.toolkit.util.CollectionPlainWraps;
+import com.jiovan.plexus.common.toolkit.util.StringUtilsWraps;
 
 
 /**
  * {@link org.thymeleaf.expression.IExpressionObjectFactory} for apache commons-rng
  *
  * @author David Hsing
- * @reference "https://dzone.com/articles/creating-an-expression-objets-using-thymeleaf"
+ *
+ * @see "https://dzone.com/articles/creating-an-expression-objets-using-thymeleaf"
  * @see org.thymeleaf.standard.expression.StandardExpressionObjectFactory
  * @see org.thymeleaf.spring6.expression.SpringStandardExpressionObjectFactory
  */
-@SuppressWarnings({"JavadocDeclaration", "JavadocLinkAsPlainText"})
 public class CommonsRngExpressionFactory implements IExpressionObjectFactory {
     private static final String RANDOM_PROVIDER = "randomProvider";    // $NON-NLS-1$
 
     @Override
     public Object buildObject(@Nullable IExpressionContext context, @Nullable String expression) {
-        return StringUtils.equals(expression, RANDOM_PROVIDER) ? RandomSource.JDK.create() : null;
+        return StringUtilsWraps.equals(expression, RANDOM_PROVIDER) ? RandomSource.JDK.create() : null;
     }
 
     @Override
@@ -50,6 +50,6 @@ public class CommonsRngExpressionFactory implements IExpressionObjectFactory {
 
     @Override
     public boolean isCacheable(@Nullable String expression) {
-        return StringUtils.equals(expression, RANDOM_PROVIDER);
+        return StringUtilsWraps.equals(expression, RANDOM_PROVIDER);
     }
 }

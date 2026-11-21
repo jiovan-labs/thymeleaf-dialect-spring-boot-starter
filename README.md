@@ -7,17 +7,17 @@ Spring Boot application integrates `thymeleaf` dialects quickly, to boost your t
 - Import dependencies
 ```xml
     <dependency>
-        <groupId>cn.unikue.springstarter</groupId>
+        <groupId>com.jiovan.spring.starter</groupId>
         <artifactId>thymeleaf-dialect-spring-boot-starter</artifactId>
         <version>LATEST</version>
     </dependency>
 ```
 
-> By default, this starter will auto take effect, you can turn it off by `spring.thymeleaf-dialect.enabled = false`
+> By default, this starter will auto take effect, you can turn it off by `jiovan.thymeleaf-dialect.enabled = false`
 
-- Configure Spring Boot `application.yml` with prefix `spring.thymeleaf-dialect` (**Optional**)
+- Configure Spring Boot `application.yml` with prefix `jiovan.thymeleaf-dialect` (**Optional**)
 ```yml
-spring:
+jiovan:
     thymeleaf-dialect:
         commons-lang-dialect:
             processor-order: 0
@@ -60,7 +60,7 @@ Ah, does it look cool?
 
 ## Document
 
-- Github: https://github.com/unikueltd/thymeleaf-dialect-spring-boot-starter
+- Github: https://github.com/jiovan-labs/thymeleaf-dialect-spring-boot-starter
 - Thymeleaf github: https://github.com/thymeleaf/thymeleaf
 - Thymeleaf homepage: https://thymeleaf.org
 
@@ -76,12 +76,12 @@ See the `NOTICE.txt` file for required notices and attributions.
 
 ## Donation
 
-You like this package? Then [donate to us](https://unikue.cn/donation) to support the development.
+You like this package? Then [donate to us](https://jiovan.com/donation) to support the development.
 
 ## Copyright
 
-Beijing Unikue Network Technology Ltd.
+Beijing Jiovan Technology Ltd.
 
 ## Website
 
-- Unikue: https://unikue.cn
+- Jiovan: https://jiovan.com

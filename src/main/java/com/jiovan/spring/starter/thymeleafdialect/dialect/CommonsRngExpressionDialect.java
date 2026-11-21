@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2022 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,20 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.thymeleafdialect.dialect;
+package com.jiovan.spring.starter.thymeleafdialect.dialect;
 
 
 import org.thymeleaf.dialect.AbstractDialect;
 import org.thymeleaf.dialect.IExpressionObjectDialect;
 import org.thymeleaf.expression.IExpressionObjectFactory;
-import cn.unikue.springstarter.thymeleafdialect.factory.CommonsRngExpressionFactory;
+import com.jiovan.spring.starter.thymeleafdialect.factory.CommonsRngExpressionFactory;
 
 
 /**
  * {@link org.thymeleaf.dialect.IExpressionObjectDialect} for apache commons-rng
  *
  * @author David Hsing
+ *
  * @see org.thymeleaf.standard.StandardDialect
  * @see org.thymeleaf.spring6.dialect.SpringStandardDialect
  */

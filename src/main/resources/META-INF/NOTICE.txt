@@ -1,6 +1,6 @@
 Thymeleaf Dialect for Spring Boot Starter
-Copyright (c) 2022 Unikue Ltd. All rights reserved.
-https://unikue.cn
+Copyright (c) 2022 Jiovan Ltd. All rights reserved.
+https://jiovan.com
 
 Thymeleaf
 https://www.thymeleaf.org

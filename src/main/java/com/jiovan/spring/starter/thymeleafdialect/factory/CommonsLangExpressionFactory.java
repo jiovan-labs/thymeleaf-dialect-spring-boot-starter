@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2022 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.thymeleafdialect.factory;
+package com.jiovan.spring.starter.thymeleafdialect.factory;
 
 
 import java.util.Set;
@@ -31,19 +31,19 @@ import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.beans.BeanUtils;
 import org.thymeleaf.context.IExpressionContext;
 import org.thymeleaf.expression.IExpressionObjectFactory;
-import cn.unikue.commonplexus.javaseutil.util.CollectionPlainWraps;
-import cn.unikue.commonplexus.javaseutil.util.StringUtilsWraps;
+import com.jiovan.plexus.common.toolkit.util.CollectionPlainWraps;
+import com.jiovan.plexus.common.toolkit.util.StringUtilsWraps;
 
 
 /**
  * {@link org.thymeleaf.expression.IExpressionObjectFactory} for apache commons-lang3
  *
  * @author David Hsing
- * @reference "https://dzone.com/articles/creating-an-expression-objets-using-thymeleaf"
+ *
+ * @see "https://dzone.com/articles/creating-an-expression-objets-using-thymeleaf"
  * @see org.thymeleaf.standard.expression.StandardExpressionObjectFactory
  * @see org.thymeleaf.spring6.expression.SpringStandardExpressionObjectFactory
  */
-@SuppressWarnings({"JavadocDeclaration", "JavadocLinkAsPlainText"})
 public class CommonsLangExpressionFactory implements IExpressionObjectFactory {
     private static final String ARRAY_UTILS_NAME = "arrayUtils";    // $NON-NLS-1$
     private static final String BOOLEAN_UTILS_NAME = "booleanUtils";    // $NON-NLS-1$

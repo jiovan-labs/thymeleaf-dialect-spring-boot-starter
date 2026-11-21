@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2022 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.thymeleafdialect.config;
+package com.jiovan.spring.starter.thymeleafdialect.config;
 
 
 import java.util.Optional;
@@ -23,14 +23,14 @@ import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBooleanProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration;
+import org.springframework.boot.thymeleaf.autoconfigure.ThymeleafAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.thymeleaf.Thymeleaf;
-import cn.unikue.springstarter.thymeleafdialect.processor.CommonsLangDialectProcessor;
-import cn.unikue.springstarter.thymeleafdialect.processor.CommonsRngDialectProcessor;
-import cn.unikue.springstarter.thymeleafdialect.property.ThymeleafDialectProperties;
+import com.jiovan.spring.starter.thymeleafdialect.processor.CommonsLangDialectProcessor;
+import com.jiovan.spring.starter.thymeleafdialect.processor.CommonsRngDialectProcessor;
+import com.jiovan.spring.starter.thymeleafdialect.property.ThymeleafDialectProperties;
 
 
 /**
@@ -44,10 +44,17 @@ import cn.unikue.springstarter.thymeleafdialect.property.ThymeleafDialectPropert
 @AutoConfigureAfter(value = ThymeleafAutoConfiguration.class)
 @EnableConfigurationProperties(value = ThymeleafDialectProperties.class)
 public class ThymeleafDialectAutoConfiguration {
-    public static final String PROPERTIES_PREFIX = "spring.thymeleaf-dialect";    // $NON-NLS-1$
+    public static final String PROPERTIES_PREFIX = "jiovan.thymeleaf-dialect";    // $NON-NLS-1$
     public static final String LANG_DIALECT_PROCESSOR = "commonsLangDialectProcessor";    // $NON-NLS-1$
     public static final String RNG_DIALECT_PROCESSOR = "commonsRngDialectProcessor";    // $NON-NLS-1$
 
+    /**
+     * Returns the Commons Lang dialect processor bean configured with the processor order from the given properties
+     *
+     * @param properties the Thymeleaf dialect properties holding the processor configuration
+     *
+     * @return the configured Commons Lang dialect processor
+     */
     @Bean(name = LANG_DIALECT_PROCESSOR)
     @ConditionalOnBooleanProperty(prefix = PROPERTIES_PREFIX + ".commons-lang-dialect", name = "enabled", matchIfMissing = true)
     @ConditionalOnMissingBean(name = LANG_DIALECT_PROCESSOR)
@@ -57,6 +64,13 @@ public class ThymeleafDialectAutoConfiguration {
         return result;
     }
 
+    /**
+     * Returns the Commons RNG dialect processor bean configured with the processor order from the given properties
+     *
+     * @param properties the Thymeleaf dialect properties holding the processor configuration
+     *
+     * @return the configured Commons RNG dialect processor
+     */
     @Bean(name = RNG_DIALECT_PROCESSOR)
     @ConditionalOnBooleanProperty(prefix = PROPERTIES_PREFIX + ".commons-rng-dialect", name = "enabled", matchIfMissing = true)
     @ConditionalOnMissingBean(name = RNG_DIALECT_PROCESSOR)
